@@ -1,7 +1,6 @@
 package com.itheima.pool;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.*;
 
 /**
  * @description: dsad
@@ -12,24 +11,25 @@ import java.util.List;
 public class Test {
 
     public static void main(String[] args) {
+        String delete = "delete from hero limit ?";
+        try (
+                Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mdh?characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC"
+                        , "root", "root");
+                PreparedStatement ps = connection.prepareStatement(delete, Statement.RETURN_GENERATED_KEYS);
+        ) {
 
-        List<Integer> list = new ArrayList<>();
-        int[] num = new int[10];
-        for (int i=0;i<num.length;i++){
-            num[i]=(int)(100*Math.random());
-            if (num[i]%2==0)
-                list.add(num[i]);
+
+            ps.setInt(1, 1);
+            ps.execute();
+            ResultSet resultSet = ps.getGeneratedKeys();
+//            if (resultSet.next())
+//                int id = resultSet.getInt(1);
+//            System.out.println(id);
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-
-
-        int count=0;
-       for (int i=0;i<num.length;i++){
-           System.out.print(num[i]+"\t");
-           count++;
-           if (count%2==0){
-               System.out.println();
-           }
-       }
 
 
     }

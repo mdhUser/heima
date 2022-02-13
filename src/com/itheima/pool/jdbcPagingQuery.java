@@ -24,7 +24,8 @@ public class jdbcPagingQuery {
              Statement statement = connection.createStatement()) {
 
             List<Hero> heroList = new ArrayList<>();
-            ResultSet resultSet = statement.executeQuery("select * from hero");
+            statement.execute("select * from hero");
+            ResultSet resultSet = statement.getResultSet();
             while (resultSet.next()) {
                 Hero hero = new Hero();
                 int id = resultSet.getInt(1);
