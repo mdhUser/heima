@@ -15,7 +15,7 @@ public class Jdbc {
 
     public static void main(String[] args) {
 
-        try ( Connection  connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mdh?characterEncoding=UTF-8&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC",
+        try ( Connection  connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mdh?characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC",
                 "root", "root");
               Statement statement = connection.createStatement()){
 

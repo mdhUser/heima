@@ -37,10 +37,11 @@ public class ORMUtils {
 
     public static void update(Hero h) {
         String sql = "update hero set name=" + "'" + h.getName() == null ? null : h.getName()
-                + "'" + ",hp=" + h.getHp() == null ? null : h.getHp()
-                + ",armor=" + h.getArmor() == null ? null : h.getArmor()
-                + ",move_speed=" + h.getMoveSpeed() == null ? null : h.getMoveSpeed()
-                + ",damage=" + h.getDamage() == null ? null : h.getDamage() + "where id=" + h.getId();
+                + "'"
+                + ",hp=" + (h.getHp() == 0 ? 0 : h.getHp())
+                + ",armor=" + (h.getArmor() == 0 ? 0 : h.getArmor())
+                + ",move_speed=" + (h.getMoveSpeed() == 0 ? 0 : h.getMoveSpeed())
+                + ",damage=" + (h.getDamage() == 0 ? 0 : h.getDamage()) + " where id=" + h.getId();
         connect(sql);
     }
 
@@ -79,10 +80,14 @@ public class ORMUtils {
         Hero h2 = new Hero();
         h2.setId(21);
         h2.setArmor(0);
+        h2.setDamage(12.1456);
+        h2.setHp(450.2564564654);
+        h2.setMoveSpeed(1000000000000000l);
+        h2.setName("剑心");
         update(h2);
         Hero h3 = new Hero();
         h3.setId(44);
-        delete(h3);
+        delete(h);
 
     }
 
