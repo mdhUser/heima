@@ -1,4 +1,4 @@
-package com.itheima.util;
+package com.itheima.jdbc.test;
 
 import com.itheima.enetiy.Hero;
 

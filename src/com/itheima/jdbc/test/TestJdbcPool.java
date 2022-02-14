@@ -1,7 +1,6 @@
 package com.itheima.jdbc.test;
 
-import com.itheima.util.JdbcPool;
-
+import com.itheima.jdbc.JdbcPool;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -16,6 +15,8 @@ public class TestJdbcPool {
 
 
     public static void main(String[] args) {
+
+
         JdbcPool jp = new JdbcPool(3);
         for (int i = 0; i < 100; i++) {
             new WorkingThread("线程" + i, jp).start();
@@ -50,6 +51,3 @@ class WorkingThread extends Thread {
 
     }
 }
-
-
-
