@@ -64,6 +64,17 @@ public class Hero {
         this.damage = damage;
     }
 
+    public synchronized void recover(){
+        hp+=1;
+    }
+
+    public synchronized void hurt(){
+        hp-=1;
+    }
+
+    public boolean isDead() {
+        return 0>=hp?true:false;
+    }
 
     @Override
     public String toString() {

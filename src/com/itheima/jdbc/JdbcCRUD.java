@@ -1,4 +1,4 @@
-package com.itheima.pool;
+package com.itheima.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

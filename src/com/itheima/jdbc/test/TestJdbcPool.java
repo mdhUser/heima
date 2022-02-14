@@ -1,4 +1,4 @@
-package com.itheima.pool.test;
+package com.itheima.jdbc.test;
 
 import com.itheima.util.JdbcPool;
 
