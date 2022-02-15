@@ -1,6 +1,6 @@
 package com.itheima.jdbc;
 
-import com.itheima.enetiy.Hero;
+import com.itheima.entity.Hero;
 
 import java.sql.*;
 import java.util.ArrayList;

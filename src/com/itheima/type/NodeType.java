@@ -1,4 +1,5 @@
 package com.itheima.type;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,29 +19,30 @@ public class NodeType<T> {
 
     public void add(T t) {
 
-        if (value == null)
-            value = t;
+        if (null == value) value = t;
 
         else {
-            if ((Integer) value - (Integer) t <= 0) {
+            if ((Integer) t - (Integer) value <= 0) {
                 if (null == leftNode) leftNode = new NodeType<>();
                 leftNode.add(t);
+            } else {
+                if (null == rightNode) rightNode = new NodeType<>();
+                rightNode.add(t);
             }
-
-            if (null == rightNode) rightNode = new NodeType<>();
-            rightNode.add(t);
         }
 
     }
 
-    public List<T> values(){
+    public List<T> values() {
 
-        List<T> values=new ArrayList<>();
-        if (null!=leftNode)
-            values.addAll(leftNode.values());
+        List<T> values = new ArrayList<>();
+        if (null != leftNode) values.addAll(leftNode.values());
 
+        values.add(value);
 
-         return values;
+        if (null != rightNode) values.addAll(rightNode.values());
+
+        return values;
     }
 
 

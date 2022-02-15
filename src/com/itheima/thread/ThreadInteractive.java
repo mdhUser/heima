@@ -1,6 +1,6 @@
 package com.itheima.thread;
 
-import com.itheima.enetiy.Hero;
+import com.itheima.entity.Hero;
 
 /**
  * @description: 线程交互

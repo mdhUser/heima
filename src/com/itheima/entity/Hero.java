@@ -1,4 +1,4 @@
-package com.itheima.enetiy;
+package com.itheima.entity;
 
 
 public class Hero {

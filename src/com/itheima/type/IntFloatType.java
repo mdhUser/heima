@@ -26,33 +26,8 @@ public class IntFloatType<Letter> {
         return letters;
     }
 
-    public static int check(int a){
-        do {
-            if (a > 80 || a < 1) {
-                a = (int) (Math.random() * 500);
-            }else {
-                break;
-            }
-        } while (true);
-
-      return a;
-    }
-
 
     public static void main(String[] args) {
-
-            int a1 = (int) (Math.random() * 500);
-            int a2 = (int) (Math.random() * 500);
-            int a3 = (int) (Math.random() * 500);
-            int a4 = (int) (Math.random() * 500);
-            int a5 = (int) (Math.random() * 500);
-
-            int end1 = check(a1);
-            int end2 = check(a1);
-            int end3 = check(a1);
-            int end4 = check(a1);
-            int end5 = check(a1);
-
 
 
         IntFloatType<Integer> integerType = new IntFloatType<>();

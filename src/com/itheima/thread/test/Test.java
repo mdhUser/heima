@@ -1,6 +1,6 @@
 package com.itheima.thread.test;
 
-import com.itheima.enetiy.Hero;
+import com.itheima.entity.Hero;
 
 /**
  * @description: test
