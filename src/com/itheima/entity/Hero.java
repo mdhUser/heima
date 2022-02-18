@@ -4,7 +4,7 @@ package com.itheima.entity;
 public class Hero {
 
     private long id;
-    private String name;
+    public String name;
     private double hp;
     private double armor;
     private long moveSpeed;
@@ -99,6 +99,10 @@ public class Hero {
 
     public boolean isDead() {
         return 0 >= hp ? true : false;
+    }
+
+    public void attackHero(Hero h2) {
+        System.out.println(this.name+ " 正在攻击 " + h2.getName());
     }
 
     @Override

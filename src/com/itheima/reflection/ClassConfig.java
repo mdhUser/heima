@@ -5,9 +5,12 @@ import com.itheima.entity.Hero;
 import java.io.File;
 import java.io.FileReader;
 import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
- * @description:
+ * @description:反射获取属性字段
  * @author: Maxwell
  * @email: maodihui@foxmail.com
  * @date: 2022/2/18 11:14
@@ -15,34 +18,57 @@ import java.lang.reflect.Constructor;
 public class ClassConfig {
 
     public static void main(String[] args) {
-        Hero hero = getHero();
-        hero.setName("456");
+//        Hero hero = getHero();
+//        hero.setName("456");
 
-        System.out.println(hero.toString());
+        Hero hero2 = new Hero();
+        hero2.setName("盖亚");
 
-//        try {
-//            Class ch = Class.forName("com.itheima.entity.ADHero");
-//            Constructor c = ch.getConstructor();
-//            Hero hero = (Hero) c.newInstance();
-//            System.out.println(hero);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+
+
+            /***
+             * getField和getDeclaredField的区别
+             * 这两个方法都是用于获取字段
+             * getField 只能获取public的，包括从父类继承来的字段。
+             * getDeclaredField 可以获取本类所有的字段，包括private的，但是不能获取继承来的字段。
+             * (注： 这里只能获取到private的字段，但并不能访问该private字段的值,除非加上setAccessible(true))
+             */
+//            Field field = hero2.getClass().getDeclaredField("name");
+//            field.setAccessible(true);
+//            System.out.println(hero2.getName());
+//            field.set(hero, "迪迦");
+//            System.out.println(field.getName());
+//            System.out.println(hero.getName());
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
     }
 
-    public static Hero getHero() {
+    public static List<Hero> getHero() {
         File f = new File("F:\\workspace\\heima\\src\\hero");
 
         try (FileReader reader = new FileReader(f)) {
             String className = null;
-            char[] cs = new char[(int) f.length() - 1];
+            char[] cs = new char[(int) f.length()];
             reader.read(cs);
             className = new String(cs);
-            Class h = Class.forName(className);
-            Constructor c = h.getConstructor();
-            Hero hero = (Hero) c.newInstance();
-            return hero;
+            List<Hero> heroes = new ArrayList<>();
+            String[] strs = className.split("\r\n");
+            for (String str : strs) {
+                if (null != str) {
+                    Class c = Class.forName(str);
+                    Constructor constructor = c.getConstructor();
+                    Hero hero = (Hero) constructor.newInstance();
+                    heroes.add(hero);
+                }
+            }
+
+            return heroes;
         } catch (Exception e) {
             e.printStackTrace();
             return null;

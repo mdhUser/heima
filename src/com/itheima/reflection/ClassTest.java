@@ -29,6 +29,10 @@ public class ClassTest {
 
     }
 
+    /**
+     * 静态方法的synchronized同步对象是当前类对象
+     *
+     */
 
     public static void method1() {
         synchronized (ClassTest.class) {

@@ -1,7 +1,5 @@
 package com.itheima.entity;
 
-import java.util.Comparator;
-
 /**
  * @description:
  * @author: Maxwell
@@ -31,4 +29,10 @@ public class APHero extends Hero implements Comparable<APHero> {
     public int compareTo(APHero o) {
         return 0;
     }
+
+    public void magicAttack() {
+        System.out.println("进行魔法攻击");
+    }
+
+
 }
