@@ -1,5 +1,9 @@
 package com.itheima.type;
 
+import com.itheima.entity.ADHero;
+import com.itheima.entity.APHero;
+import com.itheima.entity.Hero;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,36 +15,39 @@ import java.util.List;
  */
 public class Test {
 
-    public static void main(String[] args) {
 
-        ArrayList<Number> nums = new ArrayList<>();
-        nums.add(1);
-        nums.add(456.65f);
-        nums.add(87.45d);
-        System.out.println("nums = " + nums);
-
-        System.out.println();
-
-        List<Integer> integers = new ArrayList<>();
-
-        integers.add(456);
-        integers.add(24);
-        integers.add(46);
-        integers.add(85);
-        integers.add(745);
-
-        NodeType<Integer> nodeType = new NodeType<>();
-        integers.stream().forEach(i->nodeType.add(i));
-
-        System.out.println("nodeType = " + nodeType.values());
-
-
-
-
-
+    public static void iterateG(ArrayList<? extends Hero> list) {
+        for (Hero hero : list)
+            System.out.println(hero.getName());
 
     }
 
+    public static void main(String[] args) {
+//        ArrayList<Hero> hs = new ArrayList<>();
+//        ArrayList<APHero> aphs = new ArrayList<>();
+//        ArrayList<ADHero> adhs = new ArrayList<>();
+//        hs.add(new Hero("hero1"));
+//        hs.add(new Hero("hero2"));
+//        hs.add(new Hero("hero3"));
+//        adhs.add(new ADHero("adfuck"));
+//        aphs.add(new APHero("fuckU1"));
+//        adhs.add(new ADHero("fuckU2"));
+//        aphs.add(new APHero("fuckU3"));
+//        iterateG(hs);
+//        iterateG(aphs);
+//        iterateG(adhs);
+
+        try {
+//            Class c1=Hero.class;
+//            Class c2=new Hero().getClass();
+            Class c3=Class.forName("com.itheima.entity.Hero");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
 
 
 }

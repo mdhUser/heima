@@ -10,6 +10,20 @@ public class Hero {
     private long moveSpeed;
     private double damage;
 
+    static String copyright;
+
+    static {
+        System.out.println("copyright 进行初始化！");
+        copyright = "版权由Riot Games公司所有";
+    }
+
+    public Hero() {
+
+    }
+
+    public Hero(String name) {
+        this.name = name;
+    }
 
     public long getId() {
         return id;
