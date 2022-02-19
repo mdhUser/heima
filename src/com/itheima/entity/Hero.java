@@ -1,7 +1,9 @@
 package com.itheima.entity;
 
 
-public class Hero {
+import java.io.Serializable;
+
+public class Hero implements Serializable {
 
     private long id;
     public String name;
