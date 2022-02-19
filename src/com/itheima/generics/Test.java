@@ -1,11 +1,8 @@
-package com.itheima.type;
+package com.itheima.generics;
 
-import com.itheima.entity.ADHero;
-import com.itheima.entity.APHero;
 import com.itheima.entity.Hero;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @description: 测试

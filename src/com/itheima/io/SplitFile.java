@@ -44,9 +44,8 @@ public class SplitFile {
                 try (FileOutputStream fos = new FileOutputStream(eachFile)) {
                     fos.write(eachContent);
                     System.out.printf("输出子文件%s,其大小是%d字节%n", eachFile.getAbsolutePath(), eachFile.length());
+
                 }
-
-
             }
 
         } catch (FileNotFoundException e) {

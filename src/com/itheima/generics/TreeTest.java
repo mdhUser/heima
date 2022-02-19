@@ -1,10 +1,8 @@
-package com.itheima.type;
+package com.itheima.generics;
 
-import com.itheima.entity.ADHero;
 import com.itheima.entity.APHero;
 
 import java.util.Arrays;
-import java.util.List;
 
 /**
  * @description: 測試二叉樹

@@ -1,8 +1,7 @@
-package com.itheima.type;
+package com.itheima.generics;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /**
  * @description: 泛型练习

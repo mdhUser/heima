@@ -1,4 +1,4 @@
-package com.itheima.type;
+package com.itheima.generics;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,24 +9,24 @@ import java.util.List;
  * @email: maodihui@foxmail.com
  * @date: 2022/2/15 11:09
  */
-public class NodeType<T> {
+public class NodeComparable<T extends Comparable<T>> {
 
-    NodeType<T> leftNode;
+    private NodeComparable<T> leftNode;
 
-    NodeType<T> rightNode;
+    private NodeComparable<T> rightNode;
 
-    T value;
+    private T value;
 
     public void add(T t) {
 
         if (null == value) value = t;
 
         else {
-            if ((Integer) t - (Integer) value <= 0) {
-                if (null == leftNode) leftNode = new NodeType<>();
+            if (t.compareTo(value) <= 0) {
+                if (null == leftNode) leftNode = new NodeComparable<>();
                 leftNode.add(t);
             } else {
-                if (null == rightNode) rightNode = new NodeType<>();
+                if (null == rightNode) rightNode = new NodeComparable<>();
                 rightNode.add(t);
             }
         }
@@ -36,6 +36,7 @@ public class NodeType<T> {
     public List<T> values() {
 
         List<T> values = new ArrayList<>();
+
         if (null != leftNode) values.addAll(leftNode.values());
 
         values.add(value);
