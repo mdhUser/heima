@@ -1,5 +1,6 @@
 package com.itheima.reflection;
 
+import com.itheima.entity.ADHero;
 import com.itheima.entity.Hero;
 
 import java.lang.reflect.Field;
@@ -18,6 +19,7 @@ public class ClassGetMethodAndField {
 
 
         Hero h = new Hero();
+
 
         //反射获取对象方法
         try {

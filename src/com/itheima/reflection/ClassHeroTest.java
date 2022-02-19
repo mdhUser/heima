@@ -39,8 +39,6 @@ public class ClassHeroTest {
             field2.set(adHero, "剑圣");
 
             Method method = adHero.getClass().getMethod("attackHero", Hero.class);
-//            Method method2 = apHero.getClass().getMethod("magicAttack");
-//            method2.invoke(apHero);
 
             method.invoke(adHero, apHero);
 
