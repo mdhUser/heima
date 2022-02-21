@@ -17,7 +17,7 @@ public class JdbcCRUD {
        String title = sql.substring(0,6);
         if (title.equalsIgnoreCase("update")){
            try(
-                   Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mdh?characterEncoding=UTF-8&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC"
+                   Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mdh?characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC"
                    ,"root","root");
                    Statement statement = connection.createStatement();
                    ) {
@@ -31,7 +31,7 @@ public class JdbcCRUD {
 
         if (title.equalsIgnoreCase("insert")){
             try(
-                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mdh?characterEncoding=UTF-8&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC"
+                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mdh?characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC"
                             ,"root","root");
                     Statement statement = connection.createStatement();
             ) {

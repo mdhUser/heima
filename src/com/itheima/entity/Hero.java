@@ -1,8 +1,11 @@
 package com.itheima.entity;
 
 
+import com.itheima.annotation.hibernateOfMy.Entity;
+
 import java.io.Serializable;
 
+@Entity
 public class Hero implements Serializable {
 
     private long id;
