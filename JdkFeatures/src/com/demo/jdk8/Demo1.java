@@ -1,4 +1,4 @@
-package jdk8;
+package com.demo.jdk8;
 
 import java.util.Comparator;
 

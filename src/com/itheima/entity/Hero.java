@@ -3,7 +3,6 @@ package com.itheima.entity;
 
 import com.itheima.annotation.hibernateOfMy.*;
 
-import javax.naming.Name;
 import java.io.Serializable;
 
 @Entity

@@ -1,6 +1,4 @@
-package jdk8;
-
-import com.itheima.entity.Hero;
+package com.demo.jdk8;
 
 import java.util.Optional;
 
