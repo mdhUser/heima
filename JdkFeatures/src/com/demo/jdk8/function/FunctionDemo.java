@@ -8,6 +8,10 @@ import java.util.function.Function;
  * @email: maodihui@foxmail.com
  * @date: 2022/2/22 21:30
  */
+
+/**
+ * 无意义
+ */
 public class FunctionDemo implements Function {
 
     @Override

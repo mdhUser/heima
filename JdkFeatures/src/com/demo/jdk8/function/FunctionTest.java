@@ -1,5 +1,7 @@
 package com.demo.jdk8.function;
 
+import java.net.Inet4Address;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 
 /**
@@ -12,11 +14,20 @@ public class FunctionTest {
 
 
     public static void main(String[] args) {
-        test("maxwell", new FunctionDemo());
+        test("maxwell", o -> o + "经过apply处理拼接成功!");
         Function<Integer, Integer> func = a -> a * 100;
         int a = func.apply(10);
         System.out.println("a = " + a);
+        System.out.println("===================");
 
+        BiFunction<Integer, Integer, Integer> function = (x, y) -> x + y;
+        int result = function.apply(45, 2);
+        System.out.println("result = " + result);
+
+    }
+
+    public static Integer operator(Integer x, Integer y, BiFunction<Integer, Integer, Integer> function) {
+        return function.apply(x, y);
     }
 
     public static void test(String input, Function demo) {
