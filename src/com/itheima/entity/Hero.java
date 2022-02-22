@@ -54,7 +54,7 @@ public class Hero implements Serializable {
         this.hp = hp;
     }
 
-
+    @Column("armor")
     public double getArmor() {
         return armor;
     }
@@ -63,7 +63,7 @@ public class Hero implements Serializable {
         this.armor = armor;
     }
 
-
+    @Column("move_speed")
     public long getMoveSpeed() {
         return moveSpeed;
     }
@@ -72,7 +72,7 @@ public class Hero implements Serializable {
         this.moveSpeed = moveSpeed;
     }
 
-
+    @Column("damage")
     public double getDamage() {
         return damage;
     }
@@ -84,7 +84,7 @@ public class Hero implements Serializable {
     public synchronized void recover() {
         hp += 1;
         // 通知那些等待在this对象上的线程，可以醒过来了
-        System.out.printf("英雄%s回复血量：%f%n" , this.getName(), this.getHp());
+        System.out.printf("英雄%s回复血量：%f%n", this.getName(), this.getHp());
         this.notify();
     }
 
@@ -97,7 +97,7 @@ public class Hero implements Serializable {
                 e.printStackTrace();
             }
         hp -= 1;
-        System.out.printf("英雄%s受到1点伤害 血量：%f%n" , this.getName(), this.getHp());
+        System.out.printf("英雄%s受到1点伤害 血量：%f%n", this.getName(), this.getHp());
     }
 
     public boolean isDead() {

@@ -17,7 +17,7 @@ import static java.lang.annotation.ElementType.TYPE;
 @Target({METHOD, TYPE}) //表示这个注解可以用用在类/接口上，还可以用在方法上
 @Retention(RetentionPolicy.RUNTIME)//表示这是一个运行时注解，即运行起来之后，才获取注解中的相关信息
 @Inherited //表示这个注解可以被子类继承
-//@Documented //表示当执行javadoc的时候，本注解会生成相关文档
+@Documented //表示当执行javadoc的时候，本注解会生成相关文档
 @Repeatable(JDBCConfigs.class)//使用@Repeatable之后，再配合一些其他动作，就可以在同一个地方使用多次了。
 public @interface JDBCConfig {
 
