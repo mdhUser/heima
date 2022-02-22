@@ -24,6 +24,10 @@ public class FindFiles {
     }
 
 
+    @FileType(".java")
+    @FileType(".xml")
+    @FileType(".html")
+    @FileType(".go")
     public void work() {
 
         try {

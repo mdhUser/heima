@@ -1,12 +1,15 @@
 package com.itheima.entity;
 
 
-import com.itheima.annotation.hibernateOfMy.Entity;
+import com.itheima.annotation.hibernateOfMy.*;
 
+import javax.naming.Name;
 import java.io.Serializable;
 
 @Entity
+@Table(name = "hero")
 public class Hero implements Serializable {
+
 
     private long id;
     public String name;
@@ -14,13 +17,6 @@ public class Hero implements Serializable {
     private double armor;
     private long moveSpeed;
     private double damage;
-
-    static String copyright;
-
-    static {
-        System.out.println("copyright 进行初始化！");
-        copyright = "版权由Riot Games公司所有";
-    }
 
     public Hero() {
 
@@ -30,6 +26,9 @@ public class Hero implements Serializable {
         this.name = name;
     }
 
+    @Id
+    @GeneratedValue(strategy = "identity")
+    @Column("id")
     public long getId() {
         return id;
     }
@@ -38,7 +37,7 @@ public class Hero implements Serializable {
         this.id = id;
     }
 
-
+    @Column("name")
     public String getName() {
         return name;
     }
@@ -47,7 +46,7 @@ public class Hero implements Serializable {
         this.name = name;
     }
 
-
+    @Column("hp")
     public double getHp() {
         return hp;
     }
@@ -86,7 +85,7 @@ public class Hero implements Serializable {
     public synchronized void recover() {
         hp += 1;
         // 通知那些等待在this对象上的线程，可以醒过来了
-        System.out.printf("英雄%s回复血量：%f%n", this.getName(), this.getHp());
+        System.out.printf("英雄%s回复血量：%f%n" , this.getName(), this.getHp());
         this.notify();
     }
 
@@ -99,7 +98,7 @@ public class Hero implements Serializable {
                 e.printStackTrace();
             }
         hp -= 1;
-        System.out.printf("英雄%s受到1点伤害 血量：%f%n", this.getName(), this.getHp());
+        System.out.printf("英雄%s受到1点伤害 血量：%f%n" , this.getName(), this.getHp());
     }
 
     public boolean isDead() {
@@ -107,7 +106,7 @@ public class Hero implements Serializable {
     }
 
     public void attackHero(Hero h2) {
-        System.out.println(this.name+ " 正在攻击 " + h2.getName());
+        System.out.println(this.name + " 正在攻击 " + h2.getName());
     }
 
     @Override
