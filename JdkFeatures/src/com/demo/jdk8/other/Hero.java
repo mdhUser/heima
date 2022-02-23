@@ -1,4 +1,4 @@
-package com.demo.jdk8;
+package com.demo.jdk8.other;
 
 /**
  * @description:
@@ -11,6 +11,11 @@ public class Hero {
     private String name;
 
     private Integer damage;
+
+    public Hero(String name, Integer damage) {
+        this.name = name;
+        this.damage = damage;
+    }
 
     public Integer getDamage() {
         return damage;

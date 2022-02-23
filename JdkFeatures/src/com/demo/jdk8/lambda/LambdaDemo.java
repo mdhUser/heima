@@ -1,4 +1,4 @@
-package com.demo.jdk8;
+package com.demo.jdk8.lambda;
 
 import com.demo.jdk8.inter.Health;
 
