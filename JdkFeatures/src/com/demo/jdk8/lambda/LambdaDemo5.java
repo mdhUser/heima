@@ -15,8 +15,7 @@ public class LambdaDemo5 {
 
     public static void main(String[] args) {
 
-        List<Student> students = Arrays.asList(new Student(51), new Student(86), new Student(24)
-                , new Student(23), new Student(4));
+        List<Student> students = Arrays.asList(new Student(51), new Student(86), new Student(24), new Student(23), new Student(4));
 
 
         //todo 取出最大值
@@ -34,12 +33,30 @@ class Student {
 
     private int age;
 
+    private String province;
+
+
     public Student() {
     }
+
+    public Student(String province, int age) {
+        this.age = age;
+        this.province = province;
+    }
+
 
     public Student(int age) {
         this.age = age;
     }
+
+    public String getProvince() {
+        return province;
+    }
+
+    public void setProvince(String province) {
+        this.province = province;
+    }
+
 
     public int getAge() {
         return age;
@@ -51,8 +68,6 @@ class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "age=" + age +
-                '}';
+        return "Student{" + "age=" + age + '}';
     }
 }
