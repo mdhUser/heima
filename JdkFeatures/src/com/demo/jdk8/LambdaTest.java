@@ -3,8 +3,6 @@ package com.demo.jdk8;
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
-import java.util.Optional;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static java.lang.System.out;
@@ -50,8 +48,11 @@ public class LambdaTest {
 
         //并集
         List<VideoOrder> all = videoOrders1.parallelStream().collect(Collectors.toList());
+        List<VideoOrder> all1 = videoOrders1.stream().collect(Collectors.toList());
+        all1.addAll(videoOrders2);
+        out.println("all1 = " + all1);
         all.addAll(videoOrders2);
-        out.println("all = " + all.size());
+        out.println("all = " + all);
         //去重并集
         List<VideoOrder> distinct = all.stream().distinct().collect(Collectors.toList());
         distinct.forEach(out::println);
@@ -59,17 +60,24 @@ public class LambdaTest {
         //两个人的平均价格
         out.println("================================");
         IntSummaryStatistics ints1 = videoOrders1.stream().collect(Collectors.summarizingInt(VideoOrder::getMoney));
+        //方法二
+//        double avg=videoOrders1.stream().collect(Collectors.averagingDouble(VideoOrder::getMoney)).intValue();
+//        out.println("avg = " + avg);
         out.println("videoOrders1平均价格：" + ints1.getAverage());
         IntSummaryStatistics ints2 = videoOrders2.stream().collect(Collectors.summarizingInt(VideoOrder::getMoney));
         out.println("videoOrders2平均价格：" + ints2.getAverage());
 
         //两个人的总价
         int sum2 = videoOrders2.stream().map(v -> v.getMoney()).reduce((x, y) -> x + y).get();
+        //法二
+//        int count = videoOrders2.stream().collect(Collectors.summingInt(VideoOrder::getMoney)).intValue();
+//        out.println("count = " + count);
         out.println("sum2 = " + sum2);
         int sum1 = videoOrders1.stream().map(v -> v.getMoney()).reduce((x, y) -> x + y).get();
-        out.println("sum1 = " + sum1);;
+        out.println("sum1 = " + sum1);
+
+
 
     }
-
 
 }
