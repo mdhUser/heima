@@ -15,7 +15,7 @@ public class JdbcCRUD {
 
     public static int crud(String sql){
        String title = sql.substring(0,6);
-        if (title.equalsIgnoreCase("update")){
+        if ("update".equalsIgnoreCase(title)){
            try(
                    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mdh?characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC"
                    ,"root","root");
@@ -29,7 +29,7 @@ public class JdbcCRUD {
            }
         }
 
-        if (title.equalsIgnoreCase("insert")){
+        if ("insert".equalsIgnoreCase(title)){
             try(
                     Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mdh?characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC"
                             ,"root","root");
@@ -41,7 +41,7 @@ public class JdbcCRUD {
                 e.printStackTrace();
             }
         }
-        if (title.equalsIgnoreCase("delete")){
+        if ("delete".equalsIgnoreCase(title)){
             try(
                     Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mdh?characterEncoding=UTF-8&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC"
                             ,"root","root");

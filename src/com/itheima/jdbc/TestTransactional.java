@@ -35,7 +35,7 @@ public class TestTransactional {
             String input= in.next();
             ps.setInt(1, 10);
             ps.execute();
-            if (input.equalsIgnoreCase("Y"))
+            if ("Y".equalsIgnoreCase(input))
                 connection.commit();
 
         } catch (SQLException e) {

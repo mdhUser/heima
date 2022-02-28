@@ -1,4 +1,4 @@
-package com.itheima.annotation.hibernateOfMy;
+package com.itheima.annotation.myhibernate;
 
 import com.itheima.entity.Hero;
 

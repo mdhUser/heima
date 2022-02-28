@@ -1,4 +1,4 @@
-package com.itheima.annotation.hibernateOfMy;
+package com.itheima.annotation.myhibernate;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -9,9 +9,12 @@ import java.lang.annotation.Target;
  * @description:
  * @author: Maxwell
  * @email: maodihui@foxmail.com
- * @date: 2022/2/21 16:35
+ * @date: 2022/2/21 16:33
  */
-@Target(ElementType.METHOD)
+@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Id {
+public @interface Table {
+
+    String name();
+
 }

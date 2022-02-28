@@ -1,7 +1,7 @@
 package com.itheima.entity;
 
 
-import com.itheima.annotation.hibernateOfMy.*;
+import com.itheima.annotation.myhibernate.*;
 
 import java.io.Serializable;
 
