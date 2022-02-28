@@ -7,7 +7,7 @@ package com.itheima.entity;
  * @date: 2022/2/18 9:27
  */
 
-public class ADHero extends Hero {
+public class  ADHero extends Hero {
 
     private int AD;
 
