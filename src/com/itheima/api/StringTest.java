@@ -10,16 +10,13 @@ public class StringTest {
 
     public static void main(String[] args) {
 
-//        String str="fasfuihdhjijahsufgasjjp8oqnjfbbj";
-//        System.out.println(str.substring(4));
-
-
         StringBuilder sb = new StringBuilder();
         StringBuilder sb1 = sb.append(1);
 
         System.out.println("sb1 = " + sb1);
-
-
+        String a ="dasfaf";
+        String s = String.format("%s你好SD",a);
+        System.out.println("s = " + s);
 
     }
 }

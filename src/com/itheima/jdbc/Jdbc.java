@@ -15,17 +15,21 @@ public class Jdbc {
 
     public static void main(String[] args) {
 
-        try ( Connection  connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mdh?characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC",
+        try (Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/mdh?characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC",
                 "root", "root");
-              Statement statement = connection.createStatement()){
+             Statement statement = connection.createStatement()) {
 
             System.out.println("数据库连接成功，获取连接对象" + connection);
-            int time=0;
-            while (time<100){
+            int time = 0;
+            while (time < 100) {
                 time++;
-                String sql = "insert into hero (name,hp,armor,move_speed,damage) values("+"'hero"+time+"'"+","+100.25+","+45+","+25+","+100+")";
+                String sql = """
+                                        
+                        insert into hero (name,hp,armor,move_speed,damage) values( "%s%d",10,456,45,45)
+                                        
+                        """.formatted("hello", time);
                 statement.execute(sql);
-                System.out.println("插入第"+time+"条sql");
+                System.out.println("插入第" + time + "条sql");
             }
 
         } catch (SQLException e) {

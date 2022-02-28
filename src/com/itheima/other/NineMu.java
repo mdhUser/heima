@@ -1,6 +1,4 @@
-package com.itheima;
-
-import sun.util.resources.th.CalendarData_th;
+package com.itheima.other;
 
 /**
  * @description: 九九乘法表

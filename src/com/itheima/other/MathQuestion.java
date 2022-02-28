@@ -1,4 +1,4 @@
-package com.itheima;
+package com.itheima.other;
 
 import java.util.ArrayList;
 import java.util.List;
