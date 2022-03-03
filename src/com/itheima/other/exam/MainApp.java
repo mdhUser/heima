@@ -36,10 +36,8 @@ public class MainApp {
 
     public static void main(String[] args) {
 
-
         MainApp mainApp = new MainApp();
-//        mainApp.showStudentUI(new Scanner(System.in), users, mathDemos);
-        mainApp.showTeacherUI(new Scanner(System.in), users, mathDemos);
+        mainApp.showUserUI(new Scanner(System.in),users,mathDemos);
 
     }
 
@@ -52,7 +50,7 @@ public class MainApp {
             }
             System.out.println("是否要编辑题目,需要编辑输入Y,输入其他无需修改，并退出登录！");
             if (input.next().equalsIgnoreCase("y")) {
-                System.out.println("1.添加题目 \n 2.删除题目");
+                System.out.println("1.添加题目 \n2.删除题目");
                 int in = input.nextInt();
                 switch (in) {
                     case 1:
@@ -108,6 +106,7 @@ public class MainApp {
                                     mathQ.setB(b2);
                                     System.out.println("题目" + mathQ.getQuestion() + "添加成功！");
                                     mathDemos.add(mathQ);
+                                    break;
                                 default:
                                     System.out.println("请输入有效数字！");
                             }
@@ -118,6 +117,7 @@ public class MainApp {
                         break;
                     case 2:
                         deleteTest(input, math);
+                        break;
                     default:
                         System.out.println("无效数字！");
                 }
@@ -182,7 +182,7 @@ public class MainApp {
     }
 
 
-    public void showStudentUI(Scanner input, ArrayList<User> users, ArrayList<MathDemo> mathDemos) {
+    public void showUserUI(Scanner input, ArrayList<User> users, ArrayList<MathDemo> mathDemos) {
         System.out.println("欢迎来到黑马小学生算术练习系统！");
         System.out.println("请输入用户名：");
         String name = input.next();
@@ -198,20 +198,6 @@ public class MainApp {
                 answer(input, mathDemos);
                 break;
             }
-        }
-        if (!f) {
-            System.out.println("无此用户！");
-        }
-    }
-
-    public void showTeacherUI(Scanner input, ArrayList<User> users, ArrayList<MathDemo> mathDemos) {
-        System.out.println("欢迎来到黑马小学生算术练习系统！");
-        System.out.println("请输入用户名：");
-        String name = input.next();
-        System.out.println("请输入密码：");
-        String password = input.next();
-        boolean f = false;
-        for (User user : users) {
             if (user instanceof Teacher
                     && user.getName().equals(name)
                     && user.getPassword().equals(password)) {
@@ -221,11 +207,9 @@ public class MainApp {
                 break;
             }
         }
-
         if (!f) {
             System.out.println("无此用户！");
         }
     }
-
 
 }
