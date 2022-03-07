@@ -13,6 +13,17 @@ public class CharStream {
     public static void main(String[] args) {
         File file = new File("d:/LoL/lol2.txt");
 
+
+        try (FileWriter fw = new FileWriter(file)) {
+
+            char[] data = {'你','好'};
+            fw.write(data);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
         //字符流读取
         try (FileReader fr = new FileReader(file)) {
 
@@ -28,15 +39,6 @@ public class CharStream {
             e.printStackTrace();
         }
 
-
-        try (FileWriter fw = new FileWriter(file)) {
-
-            char[] data ={'你','好'};
-            fw.write(data);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
     }
 

@@ -18,5 +18,8 @@ public class StringTest {
         String s = String.format("%s你好SD",a);
         System.out.println("s = " + s);
 
+
+
+
     }
 }
