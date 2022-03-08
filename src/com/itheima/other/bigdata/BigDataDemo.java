@@ -1,4 +1,4 @@
-package com.itheima.bigdata;
+package com.itheima.other.bigdata;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
