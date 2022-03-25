@@ -23,6 +23,7 @@ public class ClassHeroTest {
         ADHero adHero = null;
 
         List<Hero> heroes = ClassConfig.getHero();
+        assert heroes != null;
         for (Hero hero : heroes) {
             if (hero instanceof APHero) {
                 apHero = (APHero) hero;
@@ -33,7 +34,9 @@ public class ClassHeroTest {
         }
 
         try {
+            assert apHero != null;
             Field field = apHero.getClass().getField("name");
+            assert adHero != null;
             Field field2 = adHero.getClass().getField("name");
             field.set(apHero, "阿木木");
             field2.set(adHero, "剑圣");
